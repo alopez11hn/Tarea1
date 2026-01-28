@@ -2,23 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serveless 1</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Decimales a Binarios</title>
+    <link rel="stylesheet" href="conversiones.css">
 </head>
 <body>
     <nav class="navbar">
         <ul>
-			<li><a href="index.html">Inicio</a></li>
-            <li><a href="conversiones.html">Conversiones</a></li>
-            <li><a href="comparaciones.html">Comparaciones</a></li>
-            <li><a href="hipotenusa.html">Hipotenusa</a></li>
+            <li><a href="index.html" title="Inicio" >Inicio</a></li>
+            <li><a href="conversiones.html" title="Conversiones">Conversiones</a></li>
+            <li><a href="comparaciones.html" title="Mayor que">Comparaciones</a></li>
+            <li><a href="hipotenusa.html" title="Hipotenusa">Hipotenusa</a></li>
         </ul>
-    </nav>  
-
-    <main class = "container">
-        <h1>Binarios --> Decimales --> Binario</h1>
-    </main>
-    <p></p>
+    </nav> 
+        <form action="ConversionDecimalBinario" method="POST" >
+            <fieldset>
+                <legend>Decimales a Binarios</legend>
+                <div class="form-group">
+                    <input type="radio" id="rb_decimal" name="conversion" value="ejercicio1" onclick="desabilitar_txt('ejercicio1')">
+                    <label for="decimal">Decimal --> Binario</label>
+                    <input type="text" id="decimal" name = "decimal" placeholder="Eje: 10 o 10.5" disabled>
+                </div>
+                <div class="form-group" >
+                    <input type="radio" id="rb_binario" name="conversion" value="ejercicio2" onclick="desabilitar_txt('ejercicio2')">
+                    <label for="binario">Binario --> Decimal</label>
+                    <input type="text" id="binario" name = "binario" placeholder="Eje: 1010" disabled>
+                </div>
+                <div class="form-group" >
+                    <input type="submit" value = "calcular division">
+                </div>
+            </fieldset>
+        </form>
+    
 </body>
+<script >
+    var rb_decimal = document.getElementById('rb_decimal');
+    var rb_binario = document.getElementById('rb_binario');
+    var txt_decimal = document.getElementById('decimal');
+    var txt_binario = document.getElementById('binario');
+
+    function desabilitar_txt(conversion) {   
+        if (conversion === 'ejercicio1') {
+            binario.disabled = true;
+            decimal.disabled = false;
+            binario.value = '';
+        } else if (conversion === 'ejercicio2') {
+            decimal.disabled = true;
+            binario.disabled = false;
+            decimal.value = '';
+        }   
+    }
+</script>
 </html>

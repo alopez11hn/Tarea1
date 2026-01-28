@@ -27,8 +27,7 @@ public class ConversionDecimalBinario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Conexion exitosa!!: ").append(request.getContextPath());
-		response.getWriter().append("Conversiones: ");
+		//doPost(request,response);
 	}
 
 
@@ -37,7 +36,28 @@ public class ConversionDecimalBinario extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String valor1 =request.getParameter("decimal");
+		String valor2 =request.getParameter("binario");
+		
+		try {
+			if(valor1 !=null && !valor1.isEmpty()) {
+				int decimal = Integer.parseInt(valor1);
+				String resultado = Integer.toBinaryString(decimal) ;
+				response.getWriter().append("Decimal --> Binario ");
+				response.getWriter().append("<h1> Resultado = </h1>"+resultado);
+			}else if (valor2 != null && !valor2.isEmpty()) {
+				int binario = Integer.parseInt(valor2,2);
+				String resultado = Integer.toString(binario) ;
+				response.getWriter().append("Binario --> Decimal ");
+				response.getWriter().append("<h1> Resultado = </h1>"+resultado);
+			} else {
+				response.getWriter().append("Valores vacios");
+			}
+				
+		} catch (Exception e) {
+			 response.getWriter().append("Error: valor ingresado no es válido ingresa un numero");
+		}
+		
 	}
 
 }
