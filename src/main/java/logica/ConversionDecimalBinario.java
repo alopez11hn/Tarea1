@@ -6,6 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+
+//usamos la libreria PrintWriter para escribir todo el HTML de respuesta
 
 /**
  * Servlet implementation class ConversionDecimalBinario
@@ -38,26 +41,120 @@ public class ConversionDecimalBinario extends HttpServlet {
 		// TODO Auto-generated method stub
 		String valor1 =request.getParameter("decimal");
 		String valor2 =request.getParameter("binario");
-		
+		String persona = "Arlen Geovany Lopez Garcia";
+		String cuenta = "202010040107";
 		try {
+			
 			if(valor1 !=null && !valor1.isEmpty()) {
 				int decimal = Integer.parseInt(valor1);
 				String resultado = Integer.toBinaryString(decimal) ;
-				response.getWriter().append("Decimal --> Binario ");
-				response.getWriter().append("<h1> Resultado = </h1>"+resultado);
+				PrintWriter out = response.getWriter();
+				out.println("""
+				<!DOCTYPE html>
+				<html lang="es">
+				<head>
+				    <meta charset="UTF-8">
+				    <title>Servlet Tarea 1</title>
+				</head>
+				<body>
+
+				<h2>Servlet Tarea 1: %s</h2>
+				<h3>Cuenta: %s</h3>
+
+				<p><strong>Operación Realizada:</strong> Coversion de Decimal a Binario</p>
+
+				<table border="3" cellpadding="5">
+				    <tr>
+				        <th>Entrada</th>
+				        <th>Respuesta</th>
+				    </tr>
+				    <tr>
+				        <td>%s</td>
+				        <td>%s</td>
+				    </tr>
+				</table>
+					<br>
+					<div>
+						<a href="conversiones.html"><button type="button">Regresar a inicio</button></a>
+					</div>
+				</body>
+				</html>
+				""".formatted(persona,cuenta,valor1,resultado));
+				
 			}else if (valor2 != null && !valor2.isEmpty()) {
 				int binario = Integer.parseInt(valor2,2);
 				String resultado = Integer.toString(binario) ;
-				response.getWriter().append("Binario --> Decimal ");
-				response.getWriter().append("<h1> Resultado = </h1>"+resultado);
+				PrintWriter out = response.getWriter();
+				out.println("""
+				<!DOCTYPE html>
+				<html lang="es">
+				<head>
+				    <meta charset="UTF-8">
+				    <title>Servlet Tarea 1</title>
+				</head>
+				<body>
+
+				<h2>Servlet Tarea 1: %s</h2>
+				<h3>Cuenta: %s</h3>
+
+				<p><strong>Operación Realizada:</strong> Coversion de Binario a decimal</p>
+
+				<table border="3" cellpadding="5">
+				    <tr>
+				        <th>Entrada</th>
+				        <th>Respuesta</th>
+				    </tr>
+				    <tr>
+				        <td>%s</td>
+				        <td>%s</td>
+				    </tr>
+				</table>
+					<br>
+					<div>
+						<a href="conversiones.html"><button type="button">Regresar a inicio</button></a>
+					</div>
+				</body>
+				</html>
+				""".formatted(persona,cuenta,valor2,resultado));
 			} else {
-				response.getWriter().append("Valores vacios");
+				PrintWriter out = response.getWriter();
+				out.println("""
+				<!DOCTYPE html>
+				<html lang="es">
+				<head>
+				    <meta charset="UTF-8">
+				    <title>Error</title>
+				</head>
+				<body>
+
+				<h2>ERROR: %s</h2> 
+					<div>
+						<a href="conversiones.html"><button type="button">Regresar a inicio</button></a>
+					</div>
+				</body>
+				</html>
+				""".formatted("Campos Vacios"));
 			}
 				
 		} catch (Exception e) {
-			 response.getWriter().append("Error: valor ingresado no es válido ingresa un numero");
-		}
-		
-	}
+			PrintWriter out = response.getWriter();
+			out.println("""
+			<!DOCTYPE html>
+			<html lang="es">
+			<head>
+			    <meta charset="UTF-8">
+			    <title>Error</title>
+			</head>
+			<body>
 
+			<h2>ERROR: %s</h2> 
+				<div>
+					<a href="conversiones.html"><button type="button">Regresar a inicio</button></a>
+				</div>
+			</body>
+			</html>
+			""".formatted("Numeros Invalidos"));
+		}
+			
+		}
 }
