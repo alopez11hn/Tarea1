@@ -11,13 +11,13 @@ import java.io.IOException;
  * Servlet implementation class ComparacionMayorQue
  */
 @WebServlet("/ComparacionMayorQue")
-public class ComparacionMayorQue extends HttpServlet {
+public class Comparaciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ComparacionMayorQue() {
+    public Comparaciones() {
         super();
         // TODO Auto-generated constructor stub
     }
