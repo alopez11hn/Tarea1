@@ -1,0 +1,146 @@
+*{
+    margin: auto;
+    padding: auto;
+    box-sizing: auto;
+}
+
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.navbar{    
+    background-color: #42641b;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+.navbar ul li{
+    margin: 0 15px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover{
+    color: #ffd700;
+}
+
+.container{
+    max-width: 800px;
+    height: 60vh;
+    justify-content: left;
+    align-items: left;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.container fieldset{
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    height: auto;
+}
+
+.container fieldset legend{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #42641b;
+    font-weight: bold;
+}
+
+.descripcion{
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #42641b;
+}
+
+.form-group input[type="text"]{
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus{
+    outline: none;
+    border-color: #42641b;
+    box-shadow: 0 0 5px rgba(66, 100, 27, 0.3);
+}
+
+.form-group input[type="submit"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #42641b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover{
+    background-color: #ffd700;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formula-info{
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    text-align: center;
+    border-left: 4px solid #42641b;
+}
+
+.formula-info p{
+    margin: 0;
+    font-size: 14px;
+    color: #42641b;
+}
+
+form{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin: 0 auto;
+    padding: 10px;
+}
