@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serverless 2</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Comparaciones</title>
+    <link rel="stylesheet" href="comparaciones.css">
 </head>
 <body>
     <nav class="navbar">
@@ -16,9 +16,32 @@
         </ul>
     </nav>  
 
-    <main class="container">
-        <h1>Mayor que</h1>
-    </main>
-    <p></p>
+    <form action="Comparaciones" method="POST" >
+        <fieldset>
+            <legend>Comparaciones</legend>
+            <div class="form-group">
+                <select name="tipo" id="tipo" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="mayor">N° Mayor</option>
+                    <option value="menor">N° Menor</option>
+                    <option value="igual">N° que mas se repite</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <input type="text" id="numero1" placeholder="Eje. 10 4 100" required>
+                <br>
+                <input type="text" id="numero2" placeholder="Eje. 10 4 100" required>
+                <br>
+                <input type="text" id="numero2" placeholder="Eje. 10 4 100" required>
+            </div>
+            <div class="form-group" >
+                <input type="submit" id = "Enviar" value = "Calcular">
+            </div>
+        </fieldset> 
+    </form>
+    
 </body>
+<script>
+
+</script>
 </html>
