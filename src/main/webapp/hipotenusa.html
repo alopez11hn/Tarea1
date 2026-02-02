@@ -1,24 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serverless 3</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Cálculo de Hipotenusa</title>
+    <link rel="stylesheet" href="hipotenusa.css">
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="conversiones.html">Conversiones</a></li>
-            <li><a href="comparaciones.html">Comparaciones</a></li>
-            <li><a href="hipotenusa.html">Hipotenusa</a></li>
+            <li><a href="index.html" title="Inicio">Inicio</a></li>
+            <li><a href="conversiones.html" title="Conversiones">Conversiones</a></li>
+            <li><a href="comparaciones.html" title="Comparaciones">Comparaciones</a></li>
+            <li><a href="hipotenusa.html" title="Hipotenusa">Hipotenusa</a></li>
         </ul>
-    </nav>  
+    </nav>
 
-    <main class="container">
-        <h1>Hipotenusa</h1>
-    </main>
-    <p></p>
+    <div class="container">
+        <form action="Hipotenusa" method="POST">
+            <fieldset>
+                <legend>Cálculo de Hipotenusa</legend>
+                <p class="descripcion">Ingrese los valores de los catetos para calcular la hipotenusa usando el Teorema de Pitágoras</p>
+                
+                <div class="form-group">
+                    <label for="cateto1">Cateto 1:</label>
+                    <input type="text" id="cateto1" name="cateto1" placeholder="Eje: 3" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cateto2">Cateto 2:</label>
+                    <input type="text" id="cateto2" name="cateto2" placeholder="Eje: 4" required>
+                </div>
+                
+                <div class="formula-info">
+                    <p><strong>Fórmula:</strong> h = √(cateto1² + cateto2²)</p>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Calcular Hipotenusa">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        // Validación básica en el cliente
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const cateto1 = document.getElementById('cateto1').value;
+            const cateto2 = document.getElementById('cateto2').value;
+            
+            if (isNaN(cateto1) || isNaN(cateto2)) {
+                e.preventDefault();
+                alert('Por favor ingrese valores numéricos válidos');
+                return false;
+            }
+            
+            if (parseFloat(cateto1) <= 0 || parseFloat(cateto2) <= 0) {
+                e.preventDefault();
+                alert('Los catetos deben ser números positivos mayores que cero');
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
