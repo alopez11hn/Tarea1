@@ -13,14 +13,14 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class ConversionDecimalBinario
  */
-@WebServlet("/ConversionDecimalBinario")
-public class ConversionDecimalBinario extends HttpServlet {
+@WebServlet("/Conversiones")
+public class Conversiones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConversionDecimalBinario() {
+    public Conversiones() {
         super();
         // TODO Auto-generated constructor stub
     }
