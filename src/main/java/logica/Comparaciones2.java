@@ -97,9 +97,8 @@ public class Comparaciones extends HttpServlet {
     private void mostrarMensaje(PrintWriter out, double n1, double n2, double n3, String respuesta, String operacion) {
         String persona = "Arlen Geovany Lopez Garcia";
         String cuenta = "202010040107";
-        String persona2 = "Renán Arturo Rivera Orellana";
-        String cuenta2 = "200820530009";
-
+        String persona = "Renán Arturo Rivera Orellana";
+        String cuenta = "200820530009";
         out.println("""
         <!DOCTYPE html>
         <html lang="es">
