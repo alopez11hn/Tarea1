@@ -54,20 +54,20 @@ public class Comparaciones extends HttpServlet {
             	response.getWriter().append(resultado);
             /*int option = Integer.parseInt(request.getParameter("option"));
         	switch (option) {
-			case 1: //resultado = String.valueOf(NumeroMaximo(numero1,numero2,numero3));
+			case 1: resultado = String.valueOf(NumeroMaximo(numero1,numero2,numero3));
 					p = "Numero Mayor";
 					response.getWriter().append(p);
-					//mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
+					mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
 				break;
 			case 2: resultado = String.valueOf(NumeroMinimo(numero1,numero2,numero3));
 					p = "Numero Menor";
 					response.getWriter().append(p);
-					//mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
+					mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
 				break;
 			case 3: resultado = //String.valueOf(NumeroRepetido(numero1,numero2,numero3));
 					p = "Numero que mas se repite";
 					response.getWriter().append(p);
-					//mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
+				    mensaje(request,response ,numero1 ,numero2, numero3, resultado, p);
 				break;
 			default:
 				break;
@@ -140,22 +140,10 @@ public class Comparaciones extends HttpServlet {
 	}
 	
 	public Boolean validartxt (String numero1, String numero2, String numero3) {
-			if (numero1 == null || numero1.trim().isEmpty() || numero2 == null || numero2.trim().isEmpty() || numero2 == null || numero2.trim().isEmpty()) {
-				return false;
-			}
 			try {
 				Double.parseDouble(numero1);
-				try {
-					Double.parseDouble(numero2);
-					try {
-						Double.parseDouble(numero3);
-						return true;
-					} catch (Exception e) {
-						return false;
-					}
-				} catch (Exception e) {
-					return false;
-				}
+				Integer.parseInt(numero1);
+				return true;
 			} catch (Exception e) {
 				return false;
 			}
