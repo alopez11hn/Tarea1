@@ -10,11 +10,11 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/Comparaciones")
-public class Comparaciones extends HttpServlet {
+@WebServlet("/Comparaciones2")
+public class Comparaciones2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public Comparaciones() {
+    public Comparaciones2() {
         super();
     }
 
@@ -95,8 +95,6 @@ public class Comparaciones extends HttpServlet {
     }
 
     private void mostrarMensaje(PrintWriter out, double n1, double n2, double n3, String respuesta, String operacion) {
-        String persona = "Arlen Geovany Lopez Garcia";
-        String cuenta = "202010040107";
         String persona = "Renán Arturo Rivera Orellana";
         String cuenta = "200820530009";
         out.println("""
