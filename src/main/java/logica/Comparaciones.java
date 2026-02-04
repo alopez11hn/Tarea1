@@ -10,17 +10,34 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/Comparaciones2")
-public class Comparaciones2 extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    public Comparaciones2() {
+/**
+ * Servlet implementation class Comparaciones
+ */
+@WebServlet("/Comparaciones")
+public class Comparaciones extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Comparaciones() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String n1 = request.getParameter("numero1");
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String n1 = request.getParameter("numero1");
         String n2 = request.getParameter("numero2");
         String n3 = request.getParameter("numero3");
 
@@ -36,11 +53,11 @@ public class Comparaciones2 extends HttpServlet {
         double numero2 = Double.parseDouble(n2);
         double numero3 = Double.parseDouble(n3);
 
-        int option = Integer.parseInt(request.getParameter("option"));
+        int opcion = Integer.parseInt(request.getParameter("tipo"));
         String resultado = "";
         String operacion = "";
 
-        switch (option) {
+        switch (opcion) {
             case 1:
                 resultado = String.valueOf(obtenerMaximo(numero1, numero2, numero3));
                 operacion = "Número Mayor";
@@ -120,7 +137,7 @@ public class Comparaciones2 extends HttpServlet {
             </table>
             <br>
             <div>
-                <a href="conversiones.html"><button type="button">Regresar a inicio</button></a>
+                <a href="comparaciones.html"><button type="button">Regresar a inicio</button></a>
             </div>
         </body>
         </html>
